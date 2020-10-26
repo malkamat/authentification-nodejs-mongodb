@@ -4,6 +4,7 @@ const dotenv = require("dotenv")
 const app = express()
 //import routes
 const authRoute = require("./routes/auth")
+const postRoute = require("./routes/posts")
 
 dotenv.config()
 
@@ -18,5 +19,6 @@ app.use(express.json())
 
 //route middlewares
 app.use("/api/user", authRoute)
+app.use("/api/posts", postRoute)
 
 app.listen(3000, () => console.log("server up and running"))
